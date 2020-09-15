@@ -1,0 +1,17 @@
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Ranchers&family=Roboto:wght@300;400;500&display=swap");
+
+// variables
+$primary-font: "Roboto", sans-serif;
+$secondary-font: "Ranchers", cursive;
+
+// global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $primary-font;
+}

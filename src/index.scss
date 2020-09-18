@@ -1,9 +1,17 @@
 // fonts
 @import url("https://fonts.googleapis.com/css2?family=Ranchers&family=Roboto:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
 
 // variables
 $primary-font: "Roboto", sans-serif;
-$secondary-font: "Ranchers", cursive;
+$secondary-font: "Amatic SC", cursive;
+$main-background: #ebf5ee;
+$main-black: #1c1c1c;
+$primary-color: #283044;
+$secondary-color: #726a95;
+$third-color: #fafad2;
+$main-transition: all 0.3s linear;
+$main-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
 // global styles
 * {
@@ -14,4 +22,375 @@ $secondary-font: "Ranchers", cursive;
 
 body {
   font-family: $primary-font;
+  background: $main-background;
+  color: $main-black;
+}
+
+// loading
+.loading {
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 20rem;
+    height: 13rem;
+  }
+}
+
+// navbar
+header,
+ul,
+nav {
+  display: flex;
+}
+
+header {
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  letter-spacing: 2px;
+
+  .logo {
+    position: relative;
+    width: 250px;
+    bottom: 15px;
+  }
+
+  nav {
+    text-transform: uppercase;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    height: 80%;
+
+    div {
+      display: flex;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    margin: 0px 12px;
+    color: $main-black;
+    transition: $main-transition;
+  }
+
+  a:hover {
+    color: $secondary-color;
+  }
+
+  ul {
+    list-style: none;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    li {
+      display: flex;
+    }
+
+    .login-cart-box {
+      width: 39%;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+.products-link {
+  display: flex;
+  transition: $main-transition;
+}
+
+.products-link:hover {
+  cursor: pointer;
+  color: $secondary-color;
+}
+
+.arrow-down {
+  margin-left: 7px;
+}
+
+.product-link-box {
+  position: relative;
+  display: inline-block;
+}
+
+// dropdown
+.dropdown {
+  width: 200px;
+  padding: 12px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  box-shadow: $main-box-shadow;
+
+  a {
+    margin: 12px 12px;
+    transition: $main-transition;
+  }
+
+  a:hover {
+    margin: 12px 24px;
+  }
+}
+
+// hero
+.hero {
+  height: 65vh;
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8) 50%,
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("./assets/hero.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $third-color;
+  text-transform: uppercase;
+  font-family: $secondary-font;
+  letter-spacing: 2px;
+
+  .banner {
+    font-size: 24px;
+    width: 80vw;
+  }
+}
+
+// buttons
+.btn {
+  text-decoration: none;
+  border: 2px solid $secondary-color;
+  padding: 8px 20px;
+  background: $secondary-color;
+  transition: $main-transition;
+}
+
+.btn:hover {
+  background: transparent;
+}
+
+.btn-hero {
+  margin-left: 0px;
+  color: $third-color;
+}
+
+.btn-product,
+.btn-single-product {
+  color: white;
+  font-family: $secondary-font;
+  letter-spacing: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn-product {
+  position: absolute;
+  top: 120px;
+  right: 190px;
+  opacity: 0;
+}
+
+.btn-product:hover,
+.btn-single-product:hover {
+  color: $main-black;
+  cursor: pointer;
+}
+
+// product section links
+.product-links {
+  display: flex;
+  height: 600px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: #ebf5ee;
+  font-size: 28px;
+  div {
+    margin: 8px;
+  }
+
+  .middle-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .middle-box {
+    margin: 3px 0px;
+    height: 50%;
+  }
+
+  .vertical-box {
+    height: 90%;
+    width: 30%;
+  }
+
+  .bass {
+    background: url("./assets/bass-link.jpg") center/cover no-repeat;
+  }
+
+  .drums {
+    background: url("./assets/drums.jpg") center/cover no-repeat;
+  }
+
+  .amps {
+    background: url("./assets/amps.jpg") center/cover no-repeat;
+  }
+
+  .guitars {
+    background: url("./assets/guitars.jpg") center/cover no-repeat;
+  }
+
+  .product-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+}
+
+.content {
+  border: 1px solid black;
+  padding: 12px 25px;
+  background: white;
+  color: black;
+  opacity: 0.7;
+  transition: $main-transition;
+}
+
+.content-hover {
+  opacity: 1;
+}
+
+// about
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-family: $secondary-font;
+  font-size: 30px;
+  letter-spacing: 2px;
+
+  .section-title {
+    text-transform: uppercase;
+    margin: 20px;
+  }
+}
+
+// product hero component
+.product-hero {
+  height: 45vh;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 12, 1) 50%,
+    rgba(255, 255, 255, 0.3)
+  );
+  background-color: $main-black;
+  display: flex;
+
+  .section-title {
+    text-transform: uppercase;
+    color: $main-background;
+    font-family: $secondary-font;
+    font-size: 120px;
+    margin: auto;
+  }
+}
+
+// product page section
+
+.section {
+  // padding: 4rem 0;
+}
+
+.products-list-container {
+  padding: 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.product {
+  border: 1px solid silver;
+  margin: 12px;
+  transition: $main-transition;
+  background: white;
+  position: relative;
+  box-shadow: $main-box-shadow;
+
+  .image-container {
+    .product-img {
+      padding: 12px;
+      width: 500px;
+      height: 200px;
+      transition: $main-transition;
+      object-fit: cover;
+    }
+
+    .product-img-hover {
+      opacity: 0.3;
+    }
+  }
+
+  .product-footer {
+    padding: 12px 20px;
+
+    .product-title {
+      margin: 8px 0px;
+    }
+    .product-price {
+      font-size: 30px;
+    }
+  }
+}
+
+.product:hover {
+  box-shadow: $main-box-shadow;
+  cursor: pointer;
+}
+
+.product-hover {
+  opacity: 1;
+}
+
+// product details
+
+.single-product {
+  display: flex;
+  margin: 6rem 8rem;
+
+  .single-product-img-box {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 12px;
+  }
+  .single-product-image {
+    width: 45rem;
+  }
+  .single-product-text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 12px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  p {
+    line-height: 25px;
+  }
 }

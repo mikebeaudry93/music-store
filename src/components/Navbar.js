@@ -77,7 +77,7 @@ const Navbar = () => {
               <div className="icon-box">
                 <FiShoppingCart className="icon" size="1em" />
               </div>
-              <Link>Cart</Link>
+              <Link to="/cart">Cart</Link>
             </li>
           </div>
         </ul>

@@ -11,6 +11,7 @@ import Bass from "./pages/product-pages/Bass";
 import Drums from "./pages/product-pages/Drums";
 import Amps from "./pages/product-pages/Amps";
 import ProductDetails from "./pages/ProductDetails";
+import Cart from "./pages/Cart";
 
 // components
 import Navbar from "./components/Navbar";
@@ -39,6 +40,9 @@ function App() {
           <Amps />
         </Route>
         <Route path="/products/:id" children={<ProductDetails />} />
+        <Route path="/cart">
+          <Cart />
+        </Route>
       </Switch>
     </Router>
   );

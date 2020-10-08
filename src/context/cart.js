@@ -1,6 +1,4 @@
 import React from "react";
-import LocalCart from "../utils/localCart";
-import { SlowBuffer } from "buffer";
 
 function getCartFromLocalStorage() {
   return localStorage.getItem("cart")

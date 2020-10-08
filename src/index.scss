@@ -257,6 +257,13 @@ header {
 .btn-hero {
   margin-left: 0px;
   color: $third-color;
+  font-family: $secondary-font;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+.btn-hero:hover {
+  cursor: pointer;
 }
 
 .btn-product,

@@ -7,18 +7,12 @@ import LoginLink from "./LoginLink";
 import logo from "../assets/logo.png";
 
 import { BsFillPersonFill } from "react-icons/bs";
-import { FiShoppingCart } from "react-icons/fi";
 import { BsChevronDown } from "react-icons/bs";
 
 const Navbar = () => {
   const { user } = React.useContext(UserContext);
   const [dropdownClicked, setDropdownClicked] = React.useState(false);
-  const [linkTo, setLinkTo] = React.useState([
-    "guitars",
-    "bass",
-    "drums",
-    "amps",
-  ]);
+  const [linkTo] = React.useState(["guitars", "bass", "drums", "amps"]);
 
   return (
     <header className="header">

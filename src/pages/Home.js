@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Element, scroller } from "react-scroll";
 
 import Hero from "../components/Hero";
@@ -18,12 +17,12 @@ const Home = () => {
   return (
     <div>
       <Hero>
-        <Link
+        <button
           className="btn btn-hero"
           onClick={() => scrollToElement("product-links")}
         >
           products
-        </Link>
+        </button>
       </Hero>
       <Element name="product-links">
         <ProductLinks />

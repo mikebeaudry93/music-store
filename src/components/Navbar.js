@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CartLink from "./Cart/CartLink";
+import { UserContext } from "../context/user";
+import LoginLink from "./LoginLink";
 
 import logo from "../assets/logo.png";
 
@@ -8,6 +11,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { BsChevronDown } from "react-icons/bs";
 
 const Navbar = () => {
+  const { user } = React.useContext(UserContext);
   const [dropdownClicked, setDropdownClicked] = React.useState(false);
   const [linkTo, setLinkTo] = React.useState([
     "guitars",
@@ -16,7 +20,6 @@ const Navbar = () => {
     "amps",
   ]);
 
-  console.log(dropdownClicked);
   return (
     <header className="header">
       <nav>
@@ -42,43 +45,30 @@ const Navbar = () => {
                   <BsChevronDown className="arrow-down" />
                 </div>
               </div>
-              {dropdownClicked ? (
-                <div className="dropdown">
-                  {linkTo.map((item) => {
-                    return (
-                      <Link
-                        onClick={() => {
-                          setDropdownClicked(!dropdownClicked);
-                        }}
-                        key={item}
-                        to={`/${item}`}
-                      >
-                        {item}
-                      </Link>
-                    );
-                  })}
-                </div>
-              ) : (
-                ""
-              )}
+              <div className="dropdown">
+                {linkTo.map((item) => {
+                  return (
+                    <Link key={item} to={`/${item}`}>
+                      {item}
+                    </Link>
+                  );
+                })}
+              </div>
             </li>
-            <li>
-              <Link>Checkout</Link>
-            </li>
+            {user.token && (
+              <li>
+                <Link to="/checkout">Checkout</Link>
+              </li>
+            )}
           </div>
           <div className="login-cart-box">
             <li>
               <div className="icon-box">
                 <BsFillPersonFill className="icon" size="1em" />
               </div>
-              <Link>Login</Link>
+              <LoginLink />
             </li>
-            <li>
-              <div className="icon-box">
-                <FiShoppingCart className="icon" size="1em" />
-              </div>
-              <Link to="/cart">Cart</Link>
-            </li>
+            <CartLink />
           </div>
         </ul>
       </nav>
@@ -87,3 +77,23 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// {dropdownClicked ? (
+//   <div className="dropdown">
+//     {linkTo.map((item) => {
+//       return (
+//         <Link
+//           onClick={() => {
+//             setDropdownClicked(!dropdownClicked);
+//           }}
+//           key={item}
+//           to={`/${item}`}
+//         >
+//           {item}
+//         </Link>
+//       );
+//     })}
+//   </div>
+// ) : (
+//   ""
+// )}

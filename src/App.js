@@ -12,14 +12,19 @@ import Drums from "./pages/product-pages/Drums";
 import Amps from "./pages/product-pages/Amps";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import Checkout from "./pages/Checkout";
 
 // components
 import Navbar from "./components/Navbar";
+import Alert from "./components/Alert";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
     <Router>
       <Navbar />
+      <Alert />
       <Switch>
         <Route exact path="/">
           <Home />
@@ -43,6 +48,12 @@ function App() {
         <Route path="/cart">
           <Cart />
         </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <PrivateRoute path="/checkout" name="mike">
+          <Checkout />
+        </PrivateRoute>
       </Switch>
     </Router>
   );

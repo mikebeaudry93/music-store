@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const EmptyCart = () => {
   return (
     <section className="empty-cart">
-      <h2 className="empty-cart-title">Empty Cart...</h2>
-      <Link to="/" className="btn btn-single-product">
+      <h2 className="cart-section-title">Empty Cart...</h2>
+      <Link to="/" className="btn btn-single-product btn-block">
         Home page
       </Link>
     </section>

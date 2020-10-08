@@ -24,7 +24,6 @@ const ProductProvider = ({ children }) => {
   React.useEffect(() => {
     setLoading(true);
     axios.get(`${url}/products`).then((res) => {
-      console.log(res);
       const featured = featuredProducts(flattenProducts(res.data));
       const products = flattenProducts(res.data);
       const guitars = filterGuitars(flattenProducts(res.data));

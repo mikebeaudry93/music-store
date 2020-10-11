@@ -19,6 +19,7 @@ import Checkout from "./pages/Checkout";
 import Navbar from "./components/Navbar";
 import Alert from "./components/Alert";
 import PrivateRoute from "./components/PrivateRoute";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
           <Checkout />
         </PrivateRoute>
       </Switch>
+      <Footer />
     </Router>
   );
 }

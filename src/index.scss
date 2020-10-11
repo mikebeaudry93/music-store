@@ -1,9 +1,11 @@
 // fonts
 @import url("https://fonts.googleapis.com/css2?family=Ranchers&family=Roboto:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
 
-// variables
+// variable
 $primary-font: "Roboto", sans-serif;
+// $primary-font: "Montserrat", sans-serif;
 $secondary-font: "Amatic SC", cursive;
 $main-background: #ebf5ee;
 $main-black: #1c1c1c;
@@ -424,7 +426,7 @@ header {
 .btn-product {
   position: absolute;
   top: 40%;
-  right: 36%;
+  right: 35%;
   // transform: translate(-50%, -50%);
   opacity: 0;
 }
@@ -737,7 +739,7 @@ header {
   .footer-content {
     display: flex;
     margin: auto;
-    padding-top: 4rem;
+    padding-top: 2.5rem;
     padding-bottom: 2rem;
     justify-content: space-between;
     width: 60%;

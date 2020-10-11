@@ -3,6 +3,7 @@ import { Element, scroller } from "react-scroll";
 
 import Hero from "../components/Hero";
 import ProductLinks from "../components/ProductLinks";
+import FeaturedProducts from "../components/Products/FeaturedProducts";
 
 const Home = () => {
   const scrollToElement = (element) => {
@@ -27,6 +28,7 @@ const Home = () => {
       <Element name="product-links">
         <ProductLinks />
       </Element>
+      <FeaturedProducts />
     </div>
   );
 };

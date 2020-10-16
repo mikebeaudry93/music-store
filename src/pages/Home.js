@@ -4,7 +4,6 @@ import { Element, scroller } from "react-scroll";
 import Hero from "../components/Hero";
 import ProductLinks from "../components/ProductLinks";
 import FeaturedProducts from "../components/Products/FeaturedProducts";
-import Footer from "../components/Footer";
 
 const Home = () => {
   const scrollToElement = (element) => {
@@ -30,7 +29,6 @@ const Home = () => {
         <ProductLinks />
       </Element>
       <FeaturedProducts />
-      <Footer />
     </div>
   );
 };

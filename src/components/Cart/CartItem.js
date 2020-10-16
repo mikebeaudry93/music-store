@@ -9,9 +9,14 @@ const CartItem = ({ amount, id, image, price, title }) => {
   );
   return (
     <article className="cart-item">
-      <img style={{ width: "140px" }} src={image} alt={title} />
+      <img
+        className="cart-img"
+        style={{ width: "140px" }}
+        src={image}
+        alt={title}
+      />
       <div className="cart-text-box">
-        <h4>{title}</h4>
+        <h4 className="cart-text-title">{title}</h4>
         <h5>${price}</h5>
         <button
           type="button"

@@ -8,8 +8,8 @@ import Product from "./Product";
 const FeaturedProducts = () => {
   const responsive = {
     largeDesktop: {
-      breakpoint: { max: 3000, min: 1439 },
-      items: 3,
+      breakpoint: { max: 3000, min: 1600 },
+      items: 4,
       slidesToSlide: 1,
     },
     desktop: {
@@ -31,7 +31,7 @@ const FeaturedProducts = () => {
   const { featured } = React.useContext(ProductContext);
   return (
     <div>
-      <h2 className="cart-section-title featured-title">featured products</h2>
+      <h2 className="featured-title">featured products</h2>
       <Carousel
         responsive={responsive}
         infinite={true}

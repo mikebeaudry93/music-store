@@ -16,6 +16,14 @@ $third-color: #fafad2;
 $main-transition: all 0.3s linear;
 $main-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
+// breakpoints
+
+@mixin phone {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
 // global styles
 * {
   margin: 0;
@@ -94,6 +102,11 @@ header,
 ul,
 nav {
   display: flex;
+
+  @include phone {
+    position: relative;
+    flex-direction: column;
+  }
 }
 
 header {
@@ -106,6 +119,13 @@ header {
     position: relative;
     width: 250px;
     bottom: 15px;
+
+    @include phone {
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      bottom: 0px;
+    }
   }
 
   nav {
@@ -114,6 +134,12 @@ header {
     align-items: center;
     width: 80vw;
     height: 80%;
+
+    @include phone {
+      height: 28px;
+      font-size: 12px;
+      padding: 20px 0px;
+    }
 
     div {
       display: flex;
@@ -125,6 +151,10 @@ header {
     margin: 0px 12px;
     color: $main-black;
     transition: $main-transition;
+
+    @include phone {
+      margin: 0px;
+    }
   }
 
   a:hover {
@@ -140,6 +170,10 @@ header {
 
     li {
       display: flex;
+
+      @include phone {
+        margin: 4px 12px;
+      }
     }
 
     .login-cart-box {
@@ -162,6 +196,11 @@ header {
           background: $secondary-color;
           color: white;
           font-size: 12px;
+
+          @include phone {
+            left: 55px;
+            bottom: -3px;
+          }
         }
       }
     }
@@ -322,6 +361,10 @@ header {
     margin: 8px;
   }
 
+  @include phone {
+    font-size: 15px;
+  }
+
   .middle-section {
     display: flex;
     flex-direction: column;
@@ -379,6 +422,17 @@ header {
 .featured-title {
   display: flex;
   justify-content: center;
+  text-transform: uppercase;
+  color: $main-black;
+  font-family: $secondary-font;
+  letter-spacing: 2px;
+  font-size: 80px;
+  margin: auto;
+  padding-bottom: 25px;
+
+  @include phone {
+    font-size: 40px;
+  }
 }
 
 // about
@@ -399,6 +453,11 @@ header {
     text-transform: uppercase;
     margin: 20px;
   }
+
+  @include phone {
+    height: 400px;
+    font-size: 15px;
+  }
 }
 
 // product hero component
@@ -418,6 +477,10 @@ header {
     font-family: $secondary-font;
     font-size: 120px;
     margin: auto;
+
+    @include phone {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -429,13 +492,20 @@ header {
   right: 35%;
   // transform: translate(-50%, -50%);
   opacity: 0;
+
+  @include phone {
+    right: 30%;
+  }
 }
 
 .products-list-container {
   padding: 1rem;
   display: flex;
-  // flex-wrap: wrap;
   justify-content: center;
+
+  @include phone {
+    flex-wrap: wrap;
+  }
 }
 
 .product {
@@ -449,18 +519,17 @@ header {
   .image-container {
     .product-img {
       padding: 12px;
-      // min-width: 20rem;
-      // min-width: 22rem;
-      // min-height: 12rem;
       width: 25rem;
       height: 12rem;
       max-height: 12rem;
-      // width: 454px;
-      // height: 196px;
       transition: $main-transition;
       margin: auto 0;
       align-self: center;
       object-fit: contain;
+
+      @include phone {
+        width: 19rem;
+      }
     }
 
     .product-img-hover {
@@ -497,27 +566,63 @@ header {
   display: flex;
   margin: 6rem 8rem;
 
+  @include phone {
+    margin: 2rem;
+    flex-direction: column;
+  }
+
   .single-product-img-box {
-    height: 400px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-right: 12px;
   }
+
+  @include phone {
+    max-height: 500px;
+  }
+
   .single-product-image {
     width: 45rem;
+
+    @include phone {
+      width: 15rem;
+    }
   }
   .single-product-text-box {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin-left: 12px;
+
+    p {
+      line-height: 30px;
+    }
   }
   h1 {
     font-size: 30px;
+    letter-spacing: 2px;
+    @include phone {
+      font-size: 20px;
+      line-height: 25px;
+      letter-spacing: 2px;
+    }
+  }
+
+  h2 {
+    @include phone {
+      margin: 12px 0px;
+      font-size: 18px;
+    }
   }
   p {
     line-height: 25px;
+
+    @include phone {
+      font-size: 13px;
+      margin: 12px 0px;
+    }
   }
 }
 
@@ -525,6 +630,10 @@ header {
 .cart-items {
   width: 50vw;
   margin: auto;
+
+  @include phone {
+    width: 80vw;
+  }
 }
 
 // empty cart
@@ -554,6 +663,12 @@ header {
   height: 130px;
   line-height: 24px;
 
+  @include phone {
+    height: 250px;
+    flex-direction: column;
+    position: relative;
+  }
+
   .cart-text-box {
     display: flex;
     flex-direction: column;
@@ -563,7 +678,25 @@ header {
     width: 500%;
     margin: 0px 24px;
     letter-spacing: 3px;
+
+    @include phone {
+      font-size: 12px;
+      height: 100%;
+      width: 100%;
+      // margin: 0px 24px;
+      letter-spacing: 3px;
+    }
+
+    .cart-text-title {
+      @include phone {
+        width: 80%;
+      }
+    }
   }
+}
+
+.cart-img {
+  width: 60px;
 }
 
 .cart-section-title,
@@ -575,10 +708,18 @@ header {
   font-size: 80px;
   margin: auto;
   padding-bottom: 25px;
+
+  @include phone {
+    font-size: 30px;
+  }
 }
 
 .total {
   font-size: 50px;
+
+  @include phone {
+    font-size: 30px;
+  }
 }
 
 .cart-amount-section {
@@ -587,6 +728,13 @@ header {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @include phone {
+    position: absolute;
+    bottom: 80px;
+    left: 10px;
+    height: 10px;
+  }
 }
 
 .cart-amount-box {
@@ -629,6 +777,10 @@ header {
     background: white;
     padding: 20px;
     box-shadow: $main-box-shadow;
+
+    @include phone {
+      width: 80vw;
+    }
   }
 
   .form-control label {
@@ -745,15 +897,31 @@ header {
     width: 60%;
     border-bottom: 2px solid grey;
 
+    @include phone {
+      display: flex;
+      justify-content: center;
+      width: 85%;
+    }
+
     .footer-title {
       margin-bottom: 3rem;
       font-size: 1rem;
+
+      @include phone {
+        margin: 0px;
+        height: 30px;
+        font-size: 10px;
+      }
     }
 
     .footer-links {
       margin: 1.4rem 0;
       font-size: 0.7rem;
       transition: $main-transition;
+
+      @include phone {
+        font-size: 9px;
+      }
     }
 
     .footer-links:hover {
@@ -770,5 +938,10 @@ header {
     display: flex;
     align-items: center;
     font-size: 0.7rem;
+
+    @include phone {
+      font-size: 9px;
+      width: 85%;
+    }
   }
 }

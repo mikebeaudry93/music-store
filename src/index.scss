@@ -661,9 +661,11 @@ header {
   @include phone {
     margin: 2rem;
     flex-direction: column;
+    // min-height: 600px;
   }
 
   .single-product-img-box {
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -671,6 +673,7 @@ header {
   }
 
   @include phone {
+    height: 500px;
     align-items: center;
   }
 

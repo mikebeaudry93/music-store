@@ -380,6 +380,10 @@ header {
   padding: 8px 20px;
   background: $secondary-color;
   transition: $main-transition;
+
+  @include phone {
+    height: 60px;
+  }
 }
 
 .btn:hover {
@@ -661,11 +665,11 @@ header {
   @include phone {
     margin: 2rem;
     flex-direction: column;
-    min-height: 600px;
+    // min-height: 600px;
   }
 
   .single-product-img-box {
-    height: 450px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;

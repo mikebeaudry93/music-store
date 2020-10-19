@@ -580,12 +580,12 @@ header {
 .btn-product {
   position: absolute;
   top: 40%;
-  right: 35%;
+  right: 34.5%;
   // transform: translate(-50%, -50%);
   opacity: 0;
 
   @include phone {
-    right: 30%;
+    right: 29%;
   }
 }
 
@@ -661,6 +661,7 @@ header {
   @include phone {
     margin: 2rem;
     flex-direction: column;
+    min-height: 600px;
   }
 
   .single-product-img-box {

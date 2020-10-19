@@ -17,5 +17,3 @@ const FeaturedProducts = () => {
 
 export default FeaturedProducts;
 
-// <ProductList title="featured products" products={featured} />
-// <h2 className="featured-title">featured products</h2>

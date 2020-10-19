@@ -24,6 +24,12 @@ $main-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   }
 }
 
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
 // global styles
 * {
   margin: 0;
@@ -97,15 +103,69 @@ body {
   line-height: 0;
 }
 
+// burger menu
+
+.bm-burger-button {
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.bm-burger-bars {
+  background: #373a47;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.burger-menu-links {
+  a {
+    margin: 25px 18px;
+    display: flex;
+    flex-direction: column;
+    color: #bdc3c7;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+  }
+}
+
+.footer-burger {
+  display: flex;
+  margin: 0px;
+}
+
 // navbar
 header,
 ul,
 nav {
   display: flex;
+  // flex-wrap: wrap;
 
   @include phone {
     position: relative;
     flex-direction: column;
+    // flex-wrap: wrap;
   }
 }
 
@@ -136,6 +196,7 @@ header {
     height: 80%;
 
     @include phone {
+      // width: 0px;
       height: 28px;
       font-size: 12px;
       padding: 20px 0px;
@@ -143,6 +204,14 @@ header {
 
     div {
       display: flex;
+    }
+  }
+
+  .checkout {
+    @include phone {
+      position: absolute;
+      top: 40px;
+      right: 30%;
     }
   }
 
@@ -215,6 +284,13 @@ header {
 .products-link:hover {
   cursor: pointer;
   color: $secondary-color;
+}
+
+.home-about-products,
+.products-link {
+  @include phone {
+    display: none;
+  }
 }
 
 .arrow-down {
@@ -581,7 +657,8 @@ header {
   }
 
   @include phone {
-    max-height: 500px;
+    height: 500px;
+    align-items: center;
   }
 
   .single-product-image {

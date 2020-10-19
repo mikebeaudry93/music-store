@@ -14,6 +14,7 @@ const Navbar = () => {
   const [dropdownClicked, setDropdownClicked] = React.useState(false);
   const [linkTo] = React.useState(["guitars", "bass", "drums", "amps"]);
 
+
   return (
     <header className="header">
       <nav>
@@ -21,10 +22,10 @@ const Navbar = () => {
         <ul>
           <div>
             <li>
-              <Link to="/">Home</Link>
+              <Link className="home-about-products" to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link className="home-about-products" to="/about">About</Link>
             </li>
             <li className="product-link-box">
               <div
@@ -51,7 +52,7 @@ const Navbar = () => {
             </li>
             {user.token && (
               <li>
-                <Link to="/checkout">Checkout</Link>
+                <Link className="checkout" to="/checkout">Checkout</Link>
               </li>
             )}
           </div>

@@ -20,10 +20,12 @@ import Navbar from "./components/Navbar";
 import Alert from "./components/Alert";
 import PrivateRoute from "./components/PrivateRoute";
 import Footer from "./components/Footer";
+import BurgerMenu from  './components/BurgerMenu'
 
 function App() {
   return (
     <Router>
+    <BurgerMenu className="burger-menu"/>
       <Navbar />
       <Alert />
       <Switch>

@@ -380,10 +380,6 @@ header {
   padding: 8px 20px;
   background: $secondary-color;
   transition: $main-transition;
-
-  @include phone {
-    height: 60px;
-  }
 }
 
 .btn:hover {
@@ -669,7 +665,7 @@ header {
   }
 
   .single-product-img-box {
-    height: 500px;
+    // height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -677,7 +673,7 @@ header {
   }
 
   @include phone {
-    height: 450px;
+    // height: 450px;
     align-items: center;
   }
 
@@ -693,6 +689,10 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     margin-left: 12px;
+
+    @include phone {
+      // height: 400px;
+    }
 
     p {
       line-height: 30px;

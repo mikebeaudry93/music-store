@@ -117,6 +117,21 @@ body {
   }
 }
 
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+.bm-overlay {
+  background: none;
+}
+
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+  // position: fixed;
+  height: 100%;
+}
+
 .bm-burger-bars {
   background: #373a47;
 }
@@ -657,7 +672,7 @@ header {
   }
 
   @include phone {
-    height: 500px;
+    height: 450px;
     align-items: center;
   }
 

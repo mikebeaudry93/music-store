@@ -665,7 +665,7 @@ header {
   }
 
   .single-product-img-box {
-    height: 500px;
+    // height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -686,6 +686,7 @@ header {
     }
   }
   .single-product-text-box {
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

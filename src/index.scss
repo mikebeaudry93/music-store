@@ -678,7 +678,7 @@ header {
   }
 
   .single-product-image {
-    width: 45rem;
+    width: 100%;
 
     @include phone {
       margin: 60px 0px;
